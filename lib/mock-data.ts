@@ -1,43 +1,50 @@
-import type { MatchResponse } from "./types"
+import type { MatchResponse } from "./types";
 
 export const mockMatchResponse: MatchResponse = {
   biomarkerCodes: ["R05", "R50.9", "R53.83"],
   matchedTrials: [
     {
       nctId: "NCT04312997",
-      title: "COVID-19 Convalescent Plasma for the Treatment of Hospitalized Patients",
+      title:
+        "COVID-19 Convalescent Plasma for the Treatment of Hospitalized Patients",
       status: "Recruiting",
       matchScore: 0.87,
       citations: [
         {
           source: "ClinicalTrials.gov API",
-          description: "Data retrieved from the official ClinicalTrials.gov API",
+          description:
+            "Data retrieved from the official ClinicalTrials.gov API",
           reference: "ClinicalTrials.gov Identifier: NCT04312997",
           url: "https://clinicaltrials.gov/study/NCT04312997",
         },
         {
           source: "ICD-10 Codes",
-          description: "International Classification of Diseases, 10th Revision",
-          reference: "R05 (Cough), R50.9 (Fever, unspecified), R53.83 (Fatigue)",
+          description:
+            "International Classification of Diseases, 10th Revision",
+          reference:
+            "R05 (Cough), R50.9 (Fever, unspecified), R53.83 (Fatigue)",
           url: "https://www.icd10data.com/",
         },
       ],
     },
     {
       nctId: "NCT04401501",
-      title: "Efficacy of Remdesivir in COVID-19 Patients With Respiratory Symptoms",
+      title:
+        "Efficacy of Remdesivir in COVID-19 Patients With Respiratory Symptoms",
       status: "Active, not recruiting",
       matchScore: 0.82,
       citations: [
         {
           source: "ClinicalTrials.gov API",
-          description: "Data retrieved from the official ClinicalTrials.gov API",
+          description:
+            "Data retrieved from the official ClinicalTrials.gov API",
           reference: "ClinicalTrials.gov Identifier: NCT04401501",
           url: "https://clinicaltrials.gov/study/NCT04401501",
         },
         {
           source: "MedDRA Terms",
-          description: "Medical Dictionary for Regulatory Activities Terminology",
+          description:
+            "Medical Dictionary for Regulatory Activities Terminology",
           reference: "Persistent cough (10034825), Pyrexia (10037660)",
           url: "https://www.meddra.org/",
         },
@@ -51,13 +58,15 @@ export const mockMatchResponse: MatchResponse = {
       citations: [
         {
           source: "ClinicalTrials.gov API",
-          description: "Data retrieved from the official ClinicalTrials.gov API",
+          description:
+            "Data retrieved from the official ClinicalTrials.gov API",
           reference: "ClinicalTrials.gov Identifier: NCT04280705",
           url: "https://clinicaltrials.gov/study/NCT04280705",
         },
         {
           source: "SNOMED CT",
-          description: "Systematized Nomenclature of Medicine -- Clinical Terms",
+          description:
+            "Systematized Nomenclature of Medicine -- Clinical Terms",
           reference: "Fever (386661006), Cough (49727002), Fatigue (84229001)",
           url: "https://www.snomed.org/",
         },
@@ -89,7 +98,8 @@ export const mockMatchResponse: MatchResponse = {
       sourceCitation: {
         source: "ClinicalTrials.gov API",
         description: "Data retrieved from the official ClinicalTrials.gov API",
-        reference: "Query parameters: condition=covid&biomarkers=R05,R50.9,R53.83",
+        reference:
+          "Query parameters: condition=covid&biomarkers=R05,R50.9,R53.83",
         url: "https://clinicaltrials.gov/api/query/study_fields",
       },
     },
@@ -117,7 +127,8 @@ export const mockMatchResponse: MatchResponse = {
       sourceCitation: {
         source: "Ranking Algorithm",
         description: "Internal algorithm for ranking trial relevance",
-        reference: "TrialMCP Ranking v2.1 - Weighted criteria matching with symptom duration factor",
+        reference:
+          "TrialMCP Ranking v2.1 - Weighted criteria matching with symptom duration factor",
         url: null,
       },
     },
@@ -126,9 +137,10 @@ export const mockMatchResponse: MatchResponse = {
       tool: "AuditLogger",
       prompt:
         'Log the matching process for patient with symptoms "persistent cough, fever, and fatigue" to trials NCT04312997, NCT04401501, NCT04280705',
-      result: "Successfully logged matching process to blockchain ledger. Audit record ID: audit-123456",
+      result:
+        "Successfully logged matching process to blockchain ledger. Audit record ID: audit-123456",
       sourceCitation: null,
     },
   ],
   auditRecordId: "audit-123456",
-}
+};

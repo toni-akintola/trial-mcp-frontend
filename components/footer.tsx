@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Brain } from "lucide-react"
+import Link from "next/link";
+import { Brain } from "lucide-react";
 
 export function Footer() {
   return (
@@ -29,5 +29,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

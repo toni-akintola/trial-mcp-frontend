@@ -1,9 +1,21 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { HeroSection } from "@/components/hero-section"
-import { FeatureCard } from "@/components/feature-card"
-import { ArrowRight, Brain, FlaskRoundIcon as Flask, Search } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { HeroSection } from "@/components/hero-section";
+import { FeatureCard } from "@/components/feature-card";
+import {
+  ArrowRight,
+  Brain,
+  FlaskRoundIcon as Flask,
+  Search,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -16,8 +28,9 @@ export default function Home() {
             Advanced Clinical Trial Matching
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            TrialMCP uses state-of-the-art AI to match patient symptoms with relevant clinical trials, providing
-            transparent reasoning and citations for every recommendation.
+            TrialMCP uses state-of-the-art AI to match patient symptoms with
+            relevant clinical trials, providing transparent reasoning and
+            citations for every recommendation.
           </p>
         </div>
 
@@ -60,12 +73,15 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Model Insight</CardTitle>
-              <CardDescription>Understand how TrialMCP works through interactive visualizations</CardDescription>
+              <CardDescription>
+                Understand how TrialMCP works through interactive visualizations
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Explore component diagrams, state transitions, and network visualizations that explain the inner
-                workings of our AI-powered matching system.
+                Explore component diagrams, state transitions, and network
+                visualizations that explain the inner workings of our AI-powered
+                matching system.
               </p>
             </CardContent>
             <CardFooter>
@@ -78,12 +94,15 @@ export default function Home() {
           <Card>
             <CardHeader>
               <CardTitle>Try the Demo</CardTitle>
-              <CardDescription>Input symptoms and see matching clinical trials in real-time</CardDescription>
+              <CardDescription>
+                Input symptoms and see matching clinical trials in real-time
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Enter patient symptoms and watch as TrialMCP translates them to biomarkers, retrieves relevant trials,
-                and ranks matches with full transparency.
+                Enter patient symptoms and watch as TrialMCP translates them to
+                biomarkers, retrieves relevant trials, and ranks matches with
+                full transparency.
               </p>
             </CardContent>
             <CardFooter>
@@ -95,5 +114,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

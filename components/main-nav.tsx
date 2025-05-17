@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ModeToggle } from "@/components/mode-toggle"
-import { Brain } from "lucide-react"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Brain } from "lucide-react";
 
 export function MainNav() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="flex w-full items-center justify-between">
@@ -31,7 +31,9 @@ export function MainNav() {
             href="/model-insight"
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary",
-              pathname === "/model-insight" ? "text-foreground" : "text-muted-foreground",
+              pathname === "/model-insight"
+                ? "text-foreground"
+                : "text-muted-foreground",
             )}
           >
             Model Insight
@@ -40,7 +42,9 @@ export function MainNav() {
             href="/demo"
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary",
-              pathname === "/demo" ? "text-foreground" : "text-muted-foreground",
+              pathname === "/demo"
+                ? "text-foreground"
+                : "text-muted-foreground",
             )}
           >
             Demo
@@ -49,7 +53,9 @@ export function MainNav() {
             href="/docs"
             className={cn(
               "text-sm font-medium transition-colors hover:text-primary",
-              pathname === "/docs" ? "text-foreground" : "text-muted-foreground",
+              pathname === "/docs"
+                ? "text-foreground"
+                : "text-muted-foreground",
             )}
           >
             Docs
@@ -59,11 +65,15 @@ export function MainNav() {
       <div className="flex items-center gap-2">
         <ModeToggle />
         <Button variant="outline" size="sm" asChild className="hidden md:flex">
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <Link
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GitHub
           </Link>
         </Button>
       </div>
     </div>
-  )
+  );
 }

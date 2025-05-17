@@ -1,9 +1,15 @@
-import { ComponentDiagram } from "@/components/diagrams/component-diagram"
-import { StateDiagram } from "@/components/diagrams/state-diagram"
-import { NetworkGraph } from "@/components/diagrams/network-graph"
-import { MetricsCharts } from "@/components/diagrams/metrics-charts"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ComponentDiagram } from "@/components/diagrams/component-diagram";
+import { StateDiagram } from "@/components/diagrams/state-diagram";
+import { NetworkGraph } from "@/components/diagrams/network-graph";
+import { MetricsCharts } from "@/components/diagrams/metrics-charts";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function ModelInsight() {
   return (
@@ -11,7 +17,8 @@ export default function ModelInsight() {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Model Insight</h1>
         <p className="text-muted-foreground">
-          Interactive visualizations explaining the TrialMCP architecture and data flow
+          Interactive visualizations explaining the TrialMCP architecture and
+          data flow
         </p>
       </div>
 
@@ -28,7 +35,8 @@ export default function ModelInsight() {
             <CardHeader>
               <CardTitle>Component Architecture</CardTitle>
               <CardDescription>
-                Visualization of the TrialMCP system architecture and component interactions
+                Visualization of the TrialMCP system architecture and component
+                interactions
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
@@ -41,7 +49,10 @@ export default function ModelInsight() {
           <Card>
             <CardHeader>
               <CardTitle>State Transitions</CardTitle>
-              <CardDescription>Flow diagram showing how data transforms through the TrialMCP pipeline</CardDescription>
+              <CardDescription>
+                Flow diagram showing how data transforms through the TrialMCP
+                pipeline
+              </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
               <StateDiagram />
@@ -54,7 +65,8 @@ export default function ModelInsight() {
             <CardHeader>
               <CardTitle>Tool Network</CardTitle>
               <CardDescription>
-                Interactive network graph showing MCP tools as nodes and data transformations as edges
+                Interactive network graph showing MCP tools as nodes and data
+                transformations as edges
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
@@ -68,7 +80,8 @@ export default function ModelInsight() {
             <CardHeader>
               <CardTitle>Performance Metrics</CardTitle>
               <CardDescription>
-                Charts showing mapping accuracy, source contribution, and other key metrics
+                Charts showing mapping accuracy, source contribution, and other
+                key metrics
               </CardDescription>
             </CardHeader>
             <CardContent className="pt-6">
@@ -78,5 +91,5 @@ export default function ModelInsight() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }

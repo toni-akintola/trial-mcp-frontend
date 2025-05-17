@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Bar,
   BarChart,
@@ -16,7 +16,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 
 export function MetricsCharts() {
   // Mock data for charts
@@ -26,16 +26,16 @@ export function MetricsCharts() {
     { name: "Neurological", accuracy: 88 },
     { name: "Gastrointestinal", accuracy: 92 },
     { name: "Musculoskeletal", accuracy: 89 },
-  ]
+  ];
 
   const sourceData = [
     { name: "ClinicalTrials.gov", value: 65 },
     { name: "WHO ICTRP", value: 20 },
     { name: "EU Clinical Trials", value: 10 },
     { name: "Other", value: 5 },
-  ]
+  ];
 
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"]
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   const performanceData = [
     { month: "Jan", precision: 85, recall: 78 },
@@ -44,7 +44,7 @@ export function MetricsCharts() {
     { month: "Apr", precision: 90, recall: 85 },
     { month: "May", precision: 92, recall: 87 },
     { month: "Jun", precision: 94, recall: 89 },
-  ]
+  ];
 
   return (
     <div className="space-y-6">
@@ -63,7 +63,10 @@ export function MetricsCharts() {
             <CardContent>
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={accuracyData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <BarChart
+                    data={accuracyData}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                  >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis domain={[80, 100]} />
@@ -91,13 +94,18 @@ export function MetricsCharts() {
                       cx="50%"
                       cy="50%"
                       labelLine={true}
-                      label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                      label={({ name, percent }) =>
+                        `${name}: ${(percent * 100).toFixed(0)}%`
+                      }
                       outerRadius={80}
                       fill="#8884d8"
                       dataKey="value"
                     >
                       {sourceData.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        <Cell
+                          key={`cell-${index}`}
+                          fill={COLORS[index % COLORS.length]}
+                        />
                       ))}
                     </Pie>
                     <Tooltip />
@@ -117,14 +125,28 @@ export function MetricsCharts() {
             <CardContent>
               <div className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={performanceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                  <LineChart
+                    data={performanceData}
+                    margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                  >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="month" />
                     <YAxis domain={[70, 100]} />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="precision" name="Precision" stroke="#0ea5e9" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="recall" name="Recall" stroke="#f97316" />
+                    <Line
+                      type="monotone"
+                      dataKey="precision"
+                      name="Precision"
+                      stroke="#0ea5e9"
+                      activeDot={{ r: 8 }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="recall"
+                      name="Recall"
+                      stroke="#f97316"
+                    />
                   </LineChart>
                 </ResponsiveContainer>
               </div>
@@ -133,5 +155,5 @@ export function MetricsCharts() {
         </TabsContent>
       </Tabs>
     </div>
-  )
+  );
 }

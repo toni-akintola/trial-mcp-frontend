@@ -1,18 +1,28 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CitationBadge } from "@/components/demo/citation-badge"
-import type { ChainOfThoughtStep } from "@/lib/types"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CitationBadge } from "@/components/demo/citation-badge";
+import type { ChainOfThoughtStep } from "@/lib/types";
 
 interface ChainOfThoughtPanelProps {
-  chainOfThought: ChainOfThoughtStep[]
+  chainOfThought: ChainOfThoughtStep[];
 }
 
-export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps) {
+export function ChainOfThoughtPanel({
+  chainOfThought,
+}: ChainOfThoughtPanelProps) {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold">Chain of Thought</h2>
-        <span className="text-sm text-muted-foreground">{chainOfThought.length} steps</span>
+        <span className="text-sm text-muted-foreground">
+          {chainOfThought.length} steps
+        </span>
       </div>
 
       <div className="space-y-4">
@@ -24,7 +34,9 @@ export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps
                   <CardTitle className="text-base">
                     Step {step.step}: {step.tool}
                   </CardTitle>
-                  <CardDescription>Tool invocation and reasoning</CardDescription>
+                  <CardDescription>
+                    Tool invocation and reasoning
+                  </CardDescription>
                 </div>
                 <Badge variant="outline">{`#${step.step}`}</Badge>
               </div>
@@ -34,7 +46,9 @@ export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps
                 <h4 className="text-sm font-medium">Prompt</h4>
                 <div className="rounded-md bg-muted p-3">
                   <p className="text-sm whitespace-pre-wrap">
-                    {step.prompt.length > 200 ? `${step.prompt.substring(0, 200)}...` : step.prompt}
+                    {step.prompt.length > 200
+                      ? `${step.prompt.substring(0, 200)}...`
+                      : step.prompt}
                   </p>
                 </div>
               </div>
@@ -43,7 +57,9 @@ export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps
                 <h4 className="text-sm font-medium">Result</h4>
                 <div className="rounded-md bg-muted p-3">
                   <p className="text-sm whitespace-pre-wrap">
-                    {step.result.length > 200 ? `${step.result.substring(0, 200)}...` : step.result}
+                    {step.result.length > 200
+                      ? `${step.result.substring(0, 200)}...`
+                      : step.result}
                   </p>
                 </div>
               </div>
@@ -51,7 +67,9 @@ export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps
               <div className="pt-2">
                 <h4 className="text-sm font-medium mb-2">Citations</h4>
                 <div className="flex flex-wrap gap-2">
-                  {step.sourceCitation && <CitationBadge citation={step.sourceCitation} />}
+                  {step.sourceCitation && (
+                    <CitationBadge citation={step.sourceCitation} />
+                  )}
                 </div>
               </div>
             </CardContent>
@@ -59,5 +77,5 @@ export function ChainOfThoughtPanel({ chainOfThought }: ChainOfThoughtPanelProps
         ))}
       </div>
     </div>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -8,12 +8,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { ExternalLink } from "lucide-react"
-import type { Citation } from "@/lib/types"
+} from "@/components/ui/dialog";
+import { ExternalLink } from "lucide-react";
+import type { Citation } from "@/lib/types";
 
 interface CitationBadgeProps {
-  citation: Citation
+  citation: Citation;
 }
 
 export function CitationBadge({ citation }: CitationBadgeProps) {
@@ -27,18 +27,24 @@ export function CitationBadge({ citation }: CitationBadgeProps) {
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>{citation.source}</DialogTitle>
-          <DialogDescription>Reference information and documentation</DialogDescription>
+          <DialogDescription>
+            Reference information and documentation
+          </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
           <div className="space-y-2">
             <h4 className="text-sm font-medium">Description</h4>
-            <p className="text-sm text-muted-foreground">{citation.description}</p>
+            <p className="text-sm text-muted-foreground">
+              {citation.description}
+            </p>
           </div>
 
           <div className="space-y-2">
             <h4 className="text-sm font-medium">Reference</h4>
             <div className="rounded-md bg-muted p-3">
-              <p className="text-sm font-mono break-all">{citation.reference}</p>
+              <p className="text-sm font-mono break-all">
+                {citation.reference}
+              </p>
             </div>
           </div>
 
@@ -58,5 +64,5 @@ export function CitationBadge({ citation }: CitationBadgeProps) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }

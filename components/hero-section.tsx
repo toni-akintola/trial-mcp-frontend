@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -13,8 +13,9 @@ export function HeroSection() {
                 AI-Powered Clinical Trial Matching
               </h1>
               <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                TrialMCP uses advanced AI to match patient symptoms with clinical trials, providing transparent
-                reasoning and citations for every recommendation.
+                TrialMCP uses advanced AI to match patient symptoms with
+                clinical trials, providing transparent reasoning and citations
+                for every recommendation.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -52,5 +53,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

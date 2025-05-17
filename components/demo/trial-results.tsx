@@ -1,8 +1,8 @@
-import { TrialCard } from "@/components/demo/trial-card"
-import type { Trial } from "@/lib/types"
+import { TrialCard } from "@/components/demo/trial-card";
+import type { Trial } from "@/lib/types";
 
 interface TrialResultsProps {
-  trials: Trial[]
+  trials: Trial[];
 }
 
 export function TrialResults({ trials }: TrialResultsProps) {
@@ -10,7 +10,9 @@ export function TrialResults({ trials }: TrialResultsProps) {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold">Matching Clinical Trials</h2>
-        <span className="text-sm text-muted-foreground">{trials.length} matches found</span>
+        <span className="text-sm text-muted-foreground">
+          {trials.length} matches found
+        </span>
       </div>
 
       <div className="grid gap-4">
@@ -19,5 +21,5 @@ export function TrialResults({ trials }: TrialResultsProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }
